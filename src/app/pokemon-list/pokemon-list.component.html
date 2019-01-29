@@ -1,0 +1,25 @@
+<app-layout>
+  <div style="text-align:center">
+    <h1>
+      PokeList
+    </h1>
+  </div>
+  <div class="container content">
+    <ul class="row">
+      <li class="col-md-12" style="list-style: none;" *ngFor="let pokemon of pokemonGrid">
+        <div class="card-deck">
+          <div class="card text-center mt-2 mb-2" style="width: 18rem;">
+            <a [routerLink]="['/pokemon', pokemon.id]">
+              <img [src]="pokemon.getImage()" alt="{{pokemon.capitalizeName()}}">
+              <div>
+                <h6>{{pokemon.capitalizeName()}}</h6>
+              </div>
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+
+  </div>
+</app-layout>
